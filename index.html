@@ -19,11 +19,15 @@
       href="https://fonts.googleapis.com"
     />
 
+    <script src="js/cuentaAtras.js" defer></script>
+    <script src="js/camposOcultos.js" defer></script>
+    <script src="js/aparecerSeccion.js" defer></script>
+
     <title>Document</title>
   </head>
   <body>
     <div class="section hero">
-      <div class="info">
+      <div class="info aparecer">
         <svg
           class="svg-anillos"
           fill="#fff"
@@ -118,13 +122,13 @@
     </div>
 
     <div
-      class="section countdown"
+      class="section countdown aparecer"
       id="countdown"
     >
       Cargando cuenta atrás...
     </div>
 
-    <div class="section lugar">
+    <div class="section lugar aparecer">
       <h2 class="titulo">HORARIO DEL ENLACE</h2>
       <img
         class="separador"
@@ -132,7 +136,7 @@
         alt="separador"
       />
 
-      <div class="container-eventos">
+      <div class="section container-eventos">
         <div class="evento">
           <div class="icono-evento">
             <img
@@ -165,7 +169,7 @@
       </div>
     </div>
 
-        <div class="section confirmacion">
+    <div class="section confirmacion aparecer">
       <h2 class="titulo">CONFIRMACIÓN ASISTENCIA</h2>
       <img
         class="separador"
@@ -207,8 +211,11 @@
           </div>
         </div>
 
-        <div class="campo oculto" id="campo-acompanantes">
-          <label for="acompanantes">Número de acompañantes (tú más cuantos)</label>
+        <div
+          class="campo oculto"
+          id="campo-acompanantes"
+        >
+          <label for="acompanantes">Número de acompañantes</label>
           <input
             type="number"
             id="acompanantes"
@@ -218,7 +225,10 @@
           />
         </div>
 
-        <div class="campo oculto" id="campo-alergias">
+        <div
+          class="campo oculto"
+          id="campo-alergias"
+        >
           <label for="alergias"
             >¿Tienes alguna alergia o necesidad alimentaria especial?</label
           >
@@ -229,8 +239,15 @@
           ></textarea>
         </div>
 
-        <div class="campo oculto" id="campo-cancelacion">
-          <p>Gracias por contestar y aunque no vayamos a compartir este día juntos, que sepas que eres muy importante para nosotros, ¡Muchos besos!</p>
+        <div
+          class="campo oculto"
+          id="campo-cancelacion"
+        >
+          <p>
+            Gracias por contestar y aunque no vayamos a compartir este día
+            juntos, que sepas que eres muy importante para nosotros, ¡Muchos
+            besos!
+          </p>
         </div>
 
         <div class="campo">
@@ -238,8 +255,5 @@
         </div>
       </form>
     </div>
-
-    <script src="js/cuentaAtras.js"></script>
-    <script src="js/camposOcultos.js"></script>
   </body>
 </html>
