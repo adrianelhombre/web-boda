@@ -13,6 +13,10 @@
           campoAcompanantes.classList.add('oculto');
           campoAlergias.classList.add('oculto');
           campoCancelacion.classList.remove('oculto')
+
+          // Limpiar valores al ocultar
+          inputAcompanantes.value = 0;
+          inputAlergias.value = '';
         }
       });
     });

@@ -19,9 +19,18 @@
       href="https://fonts.googleapis.com"
     />
 
-    <script src="js/cuentaAtras.js" defer></script>
-    <script src="js/camposOcultos.js" defer></script>
-    <script src="js/aparecerSeccion.js" defer></script>
+    <script
+      src="js/cuentaAtras.js"
+      defer
+    ></script>
+    <script
+      src="js/camposOcultos.js"
+      defer
+    ></script>
+    <script
+      src="js/aparecerSeccion.js"
+      defer
+    ></script>
 
     <title>Document</title>
   </head>
@@ -177,7 +186,16 @@
         alt="separador"
       />
 
-      <form class="formulario">
+      <form
+        name="confirmacion-boda"
+        netlify
+      >
+        <input
+          type="hidden"
+          name="form-name"
+          value="confirmacion-boda"
+        />
+
         <div class="campo">
           <label for="nombre">Nombre completo</label>
           <input
@@ -191,23 +209,23 @@
         <div class="campo">
           <label>¿Asistirás a la boda?</label>
           <div class="radio-group">
-            <label
-              ><input
+            <label>
+              <input
                 type="radio"
                 name="asistencia"
                 value="sí"
                 required
               />
-              Sí</label
-            >
-            <label
-              ><input
+              Sí
+            </label>
+            <label>
+              <input
                 type="radio"
                 name="asistencia"
                 value="no"
               />
-              No</label
-            >
+              No
+            </label>
           </div>
         </div>
 
