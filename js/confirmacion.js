@@ -5,7 +5,6 @@ form.addEventListener("submit", function (e) {
 
   const data = new FormData(form);
 
-  // Guardamos los datos en localStorage para después leerlos en gracias.html
   const datosParaGuardar = {
     nombre: data.get("nombre"),
     asistencia: data.get("asistencia"),
