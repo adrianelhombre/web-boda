@@ -1,18 +1,15 @@
 document.querySelector("form").addEventListener("submit", function (e) {
-  e.preventDefault();
-
+  e.preventDefault(); // Paramos el envío normal para controlar
   const form = e.target;
-  const nombre = encodeURIComponent(form.nombre.value);
-  const asistencia = encodeURIComponent(form.asistencia.value);
-  const acompanantes = encodeURIComponent(form.acompanantes.value);
-  const alergias = encodeURIComponent(form.alergias.value);
+  const datos = {
+    nombre: form.nombre.value,
+    asistencia: form.asistencia.value,
+    acompanantes: form.acompanantes ? form.acompanantes.value : "0",
+    alergias: form.alergias ? form.alergias.value : "Ninguna"
+  };
+  
+  localStorage.setItem("confirmacionBoda", JSON.stringify(datos));
 
-  // Construimos la URL con parámetros
-  const redirectURL = `views/gracias.html?nombre=${nombre}&asistencia=${asistencia}&acompanantes=${acompanantes}&alergias=${alergias}`;
-
-  // Enviamos a Netlify + redirigimos con los datos
-  form.submit(); // Esto envía el formulario a Netlify
-  setTimeout(() => {
-    window.location.href = redirectURL;
-  }, 500); // pequeño delay para asegurar que envía primero
+  // Enviar el formulario manualmente a Netlify:
+  form.submit();
 });
