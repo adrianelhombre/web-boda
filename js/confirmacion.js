@@ -8,7 +8,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
   const alergias = encodeURIComponent(form.alergias.value);
 
   // Construimos la URL con parámetros
-  const redirectURL = `/gracias.html?nombre=${nombre}&asistencia=${asistencia}&acompanantes=${acompanantes}&alergias=${alergias}`;
+  const redirectURL = `views/gracias.html?nombre=${nombre}&asistencia=${asistencia}&acompanantes=${acompanantes}&alergias=${alergias}`;
 
   // Enviamos a Netlify + redirigimos con los datos
   form.submit(); // Esto envía el formulario a Netlify
