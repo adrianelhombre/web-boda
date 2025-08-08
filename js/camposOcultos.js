@@ -2,10 +2,12 @@
     const campoAcompanantes = document.getElementById('campo-acompanantes');
     const campoAlergias = document.getElementById('campo-alergias');
     const campoCancelacion = document.getElementById('campo-cancelacion');
+    const inputAcompanantes = document.getElementById('acompanantes')
+    const inputAlergias = document.getElementById('alergias')
 
     radios.forEach(radio => {
       radio.addEventListener('change', () => {
-        if (radio.value === 'sí') {
+        if (radio.value === 'si') {
           campoAcompanantes.classList.remove('oculto');
           campoAlergias.classList.remove('oculto');
           campoCancelacion.classList.add('oculto')

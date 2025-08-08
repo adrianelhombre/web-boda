@@ -31,6 +31,10 @@
       src="js/aparecerSeccion.js"
       defer
     ></script>
+    <script
+      src="js/confirmacion.js"
+      defer
+    ></script>
 
     <title>Document</title>
   </head>
@@ -147,32 +151,58 @@
 
       <div class="section container-eventos">
         <div class="evento">
-          <div class="icono-evento">
-            <img
-              src="assets/novio.png"
-              alt="icono evento"
-            />
+          <div class="evento-cabecera">
+            <div class="icono-evento">
+              <img
+                src="assets/novio.png"
+                alt="icono evento"
+              />
+              <h3 class="subtitulo">CEREMONIA - 17:45h</h3>
+            </div>
+            <div class="info-evento">
+              <p>Ayuntamiento de Villanueva de Gállego</p>
+              <p>Pl. de España, 1, 50830 Villanueva de Gállego, Zaragoza</p>
+            </div>
           </div>
-          <div class="info-evento">
-            <h3 class="subtitulo">CEREMONIA</h3>
-            <p class="hora">17:45</p>
-            <p>Ayuntamiento de Villanueva de Gállego</p>
-            <p>Pl. de España, 1, 50830 Villanueva de Gállego, Zaragoza</p>
+
+          <div class="mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.8038883674653!2d-0.8242563220386626!3d41.76788587230451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd590e0f56184253%3A0x5c2e272a3146a9f8!2sAyuntamiento%20de%20Villanueva%20de%20G%C3%A1llego.!5e0!3m2!1ses!2ses!4v1754669012025!5m2!1ses!2ses"
+              width="1000"
+              height="650"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
 
         <div class="evento">
-          <div class="icono-evento">
-            <img
-              src="assets/vino.png"
-              alt="icono evento"
-            />
+          <div class="evento-cabecera">
+            <div class="icono-evento">
+              <img
+                src="assets/vino.png"
+                alt="icono evento"
+              />
+              <h3 class="subtitulo">CELEBRACIÓN - 20:15h</h3>
+            </div>
+            <div class="info-evento">
+              <p>Aura Restaurante</p>
+              <p>Av. de José Atarés, 7, 50018 Zaragoza</p>
+            </div>
           </div>
-          <div class="info-evento">
-            <h3 class="subtitulo">CELEBRACIÓN</h3>
-            <p class="hora">20:15</p>
-            <p>Aura Restaurante</p>
-            <p>Av. de José Atarés, 7, 50018 Zaragoza</p>
+
+          <div class="mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5961.442717193741!2d-0.8913559220403698!3d41.66176197892826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914be7d4c6721%3A0xd34285a3d9186535!2sAura%20Restaurante!5e0!3m2!1ses!2ses!4v1754679799448!5m2!1ses!2ses"
+              width="1000"
+              height="650"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -189,7 +219,8 @@
       <form
         name="confirmacion-boda"
         class="formulario"
-        netlify
+        data-netlify="true"
+        action="views/gracias.html"
       >
         <input
           type="hidden"
@@ -214,7 +245,7 @@
               <input
                 type="radio"
                 name="asistencia"
-                value="sí"
+                value="si"
                 required
               />
               Sí
@@ -270,9 +301,21 @@
         </div>
 
         <div class="campo">
-          <button type="submit">Enviar confirmación</button>
+          <button
+            class="boton"
+            type="submit"
+          >
+            Enviar confirmación
+          </button>
         </div>
       </form>
+    </div>
+
+    <div class="fondo">
+      <img
+        src="assets/fondo.png"
+        alt="imagen fondo"
+      />
     </div>
   </body>
 </html>

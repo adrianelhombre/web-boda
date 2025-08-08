@@ -2,10 +2,10 @@
   --fuente-titulos: "Bodoni";
   --fuente-textos: "Antic";
   --fuente-especial: "Lobster";
-  --primary-color: #481832;
-  --secondary-color: #ab104b;
-  --bg-primary: #48183230;
-  --bg-secondary: #ab104c30;
+  --primary-color: #284818;
+  --secondary-color: #168807;
+  --bg-primary: #18481e30;
+  --bg-secondary: #037b3130;
 }
 
 * {
@@ -35,7 +35,7 @@
 }
 
 html {
-  background-color: #fffbfb;
+  background-color: #f4fff7;
 }
 
 label,
@@ -75,6 +75,20 @@ p {
 
 /* ESTILOS PAGINA*/
 
+.fondo {
+  position: fixed;
+  top: 0;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.fondo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
 .hero {
   background: url("../assets/hero.jpeg") center center / cover no-repeat;
   color: #ededed;
@@ -110,7 +124,7 @@ p {
 }
 
 .filtro {
-  background-color: #8209493e;
+  background-color: #03551249;
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -150,51 +164,93 @@ p {
   color: var(--secondary-color);
 }
 
+
+
+
 .container-eventos {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  gap: 100px;
+  width: 60%;
+  gap: 150px;
   margin-bottom: 200px;
+  border-radius: 10px;
 }
 
 .evento {
   display: flex;
-  gap: 80px;
+  flex-direction: column;
+  gap: 30px;
   width: 100%;
-  height: clamp(20vh, 30vh, 350px);
+  height: clamp(40vh, 70vh, 1000px);
+  font-family: var(--fuente-textos);
+}
+
+.evento-cabecera {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .icono-evento {
   flex: 1;
-  background-color: var(--bg-secondary);
-  padding: 20px;
-  border-radius: 8px;
+  border-bottom: 4px solid var(--bg-primary);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
   height: 100%;
+  padding: 10px;
+  gap: 40px;
 }
 
 .icono-evento img {
   width: auto;
-  height: clamp(100px, 20vh, 200px);
+  height: clamp(40px, 15vh, 80px);
   object-fit: cover;
 }
 
+.icono-evento h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: var(--primary-color);
+}
+
 .info-evento {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: var(--fuente-textos);
   font-size: clamp(1rem, 2vw, 1.4rem);
   gap: 10px;
+  padding: 10px;
 }
 
 .info-evento .hora {
   font-weight: bold;
 }
+
+.mapa {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: clamp(400px, 50vh, 600px);
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mapa iframe {
+  flex: 2;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+
+
 
 .confirmacion {
   margin-bottom: 100px;
@@ -231,7 +287,7 @@ p {
   resize: none;
 }
 
-.formulario button {
+.boton {
   border: none;
   padding: 10px 25px;
   background-color: var(--bg-secondary);
@@ -241,7 +297,7 @@ p {
   transition: all 0.3s ease-in-out;
 }
 
-.formulario button:hover {
+.boton:hover {
   cursor: pointer;
   background-color: var(--primary-color);
   color: #fff;
@@ -251,6 +307,59 @@ p {
   display: flex;
   gap: 20px;
 }
+
+
+
+/* gracias.html */
+
+.recibido {
+  justify-content: center;
+}
+
+.recibido .separador {
+  margin-bottom: 50px;
+}
+
+.resumen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resumen p, a {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+}
+
+.recibido .boton {
+  margin-top: 60px;
+}
+
+.recibido .boton a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.recibido .boton:hover a {
+  color: #fff;
+}
+
+
+/* ANIMACIONES */
+
+.aparecer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.aparecer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 
 
 
@@ -280,24 +389,29 @@ p {
     min-height: 0;
   }
 
+
   .container-eventos {
     width: 70%;
-    margin-bottom: 0;
     min-height: 0;
   }
 
   .evento {
-    height: clamp(15vh, 40vh, 220px);
-    gap: 80px;
+    height: clamp(400px, 40vh, 600px);
   }
+
 
   .info-evento {
-    flex: 2;
+    flex: 1;
   }
 
-  .icono-evento img {
-    height: clamp(100px, 20vh, 150px);
+  .mapa {
+    flex: 2;
+    height: clamp(250px, 25vh, 300px);
   }
+
+
+
+
 
   .confirmacion {
     min-height: 0;
@@ -311,39 +425,11 @@ p {
 
 
 
-
-
-.aparecer {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 0.6s ease;
-  will-change: opacity, transform;
-}
-
-.aparecer.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-
-
-
-
-
 @media (max-width: 768px) {
   .container-eventos {
     width: 85%;
   }
 
-  .evento {
-    height: clamp(15vh, 20vh, 250px);
-    gap: 20px;
-  }
-
-  .icono-evento img {
-    height: clamp(100px, 15vh, 100px);
-  }
 
   .formulario {
     width: 85%;
